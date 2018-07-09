@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>&#x26F0; &#x2702; &#x1F4C4;</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>>
+  <body onload="displayTally()">
+    <div class= "head-foot">
+      <h1 id="heading">Enter a move pal </h1>
+      <p>Win: 1 point to you <br>Lose: 1 point to the computer <br> Draw: No points awarded</p>
+    </div>
+    <div id= "game-content">
+      <div class="play" id="options">
+        <div class="option">
+          <button type="button" class="rsp-choice interactive-btn" id="rock" onclick="playGame(this.id)">&#x26F0;</button>
+        </div>
+        <div class="option">
+          <button type="button" class="rsp-choice interactive-btn" id="scissors" onclick="playGame(this.id)">&#x2702;</button>
+        </div>
+        <div class="option">
+          <button type="button" class="rsp-choice interactive-btn" id="paper" onclick="playGame(this.id)">&#x1F4C4;</button>
+        </div>
+      </div>
+      <div class="play" id="versus">
+        <span>VS</span>
+      </div>
+      <div class="play" id="comp-choice">
+        <button type="button" class="rsp-choice" id="cpu-move"></button>
+      </div>
+    </div>
+    <div id="footer" class="head-foot">
+      <div class="scores">
+        <p class="tally">Player Tally</p>
+        <p id="playerTally"></p>
+      </div>
+      <div class="scores">
+        <p class="tally">Computer Tally</p>
+        <p id="computerTally"></p>
+      </div>
+    </div>
+
+    <script src='index.js'></script>
+  </body>
+</html>
