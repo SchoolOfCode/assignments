@@ -1,13 +1,20 @@
-function playGame() {
+
+/*
+ * play the game for as long as the user desires
+ */
+ function playGame() {
   let continueGame = true;
-  while(continueGame) {
+  while (continueGame) {
     compareMoves(getInput(), getRandomInt(0, 2));
-    if(!confirm('Do you want to continue playing?')) {
+    if (!confirm('Do you want to continue playing?')) {
       continueGame = false;
     }
   }
 }
 
+/*
+ * returns the string input via a prompt request
+*/
 function getInput() {
   return prompt("Please enter your name", "Enter \"Rock\", \"Scissors\" or \"Paper\"...");
 }
@@ -26,7 +33,7 @@ function getInput() {
  * https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
  */
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /*
@@ -40,43 +47,45 @@ function getRandomInt(min, max) {
  */
 function compareMoves(playerMove, random) {
   const computerMove = initialiseComputerMove(random);
-  if(computerMove === 'rock'){
-    if(playerMove === computerMove){
+  if (computerMove === 'rock') {
+    if (playerMove === computerMove) {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('DRAW');
-    }else if(playerMove === 'scissors'){
+    } else if (playerMove === 'scissors') {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('Computer Wins');
-    }else if(playerMove === 'paper'){
+    } else if (playerMove === 'paper') {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('You Win! Well played!');
-    }else{
+    } else {
       console.log('Please enter a valid move!');
     }
-  } if(computerMove === 'scissors'){
-      if(playerMove === computerMove){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('DRAW');
-      }else if(playerMove === 'rock'){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('You Win! Well played!');
-      }else if(playerMove === 'paper'){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('Computer Wins!');
-      }else{
-        console.log('Please enter a valid move!');
-      }
-} if(computerMove === 'paper'){
-    if(playerMove === computerMove){
+  }
+  if (computerMove === 'scissors') {
+    if (playerMove === computerMove) {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('DRAW');
-    }else if(playerMove === 'rock'){
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('Computer Wins!');
-    }else if(playerMove === 'scissors'){
+    } else if (playerMove === 'rock') {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('You Win! Well played!');
-    }else{
+    } else if (playerMove === 'paper') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('Computer Wins!');
+    } else {
+      console.log('Please enter a valid move!');
+    }
+  }
+  if (computerMove === 'paper') {
+    if (playerMove === computerMove) {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('DRAW');
+    } else if (playerMove === 'rock') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('Computer Wins!');
+    } else if (playerMove === 'scissors') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('You Win! Well played!');
+    } else {
       console.log('Please enter a valid move!');
     }
   }
@@ -91,12 +100,12 @@ function compareMoves(playerMove, random) {
  * @return
  *   the move that the computer will play
  */
-function initialiseComputerMove(random){
-  if(random === 0) {
+function initialiseComputerMove(random) {
+  if (random === 0) {
     return 'rock';
-  }else if(random === 1) {
+  } else if (random === 1) {
     return 'scissors';
-  }else if(random === 2){
+  } else if (random === 2) {
     return 'paper';
   }
 }
