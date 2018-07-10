@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.head-foot, #controls {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 60px;
+}
+
+#heading {
+  font-size: 3em;
+}
+
+#controls button {
+  height: 50px;
+  width: 120px;
+}
+
+#controls input {
+  height: 25px;
+  width: 120px;
+  margin-bottom: 20px;
+}
