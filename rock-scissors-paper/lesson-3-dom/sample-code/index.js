@@ -1,58 +1,44 @@
 /*
- * initial scores for the player and computer
+ * initialising scores for both the player and the computer
  */
-let playerTally = 0
-let computerTally = 0;
+let playerScore = 0;
+let cpuScore = 0;
 
 /*
- * initialising utf-8 codes that represent emojis
+ * stores what strings should be associated with the player and computer
  */
-const rockEmoji = '&#x26F0;';
-const scissorEmoji = '&#x2702;';
-const paperEmoji = '&#x1F4C4;';
+const player = 'player';
+const cpu = 'computer';
 
 /*
- * playGame will run each time the user chooses a playerMove
- *
- * @param {string} playerMove
- *   data representing the player's move: 'rock', 'scissors' or 'paper'
-*/
-function playGame(playerMove) {
-  compareMoves(playerMove, getRandomInt(0, 2));
+ * play a move each time the user clicks the button
+ */
+function playGame() {
+  compareMoves(getInput(), getRandomInt(0, 2));
 }
 
 /*
- * increments the tallied score of either the player or the computer
- *
- * @param {string} tally
- *   the tally which should be updated: 'player' or 'computer'
-*/
-function incrementTally(tally){
-  if(tally === 'player'){
-    playerTally++;
-  }else if (tally === 'computer') {
-    computerTally++;
+ * increments the score of either the computer or player
+ * @param {string} playerMove
+ *   specify whether the 'player' or 'computer' will gain an extra point
+ */
+function incrementScore(player) {
+  if (player === 'player') {
+    playerScore++;
+  } else if (player === 'computer') {
+    cpuScore++;
   }
 }
 
-/*
- * updates DOM with an image of the computer's choice
- *
- * @param {string} computerMove
- *   data representing an emoji to represent either a rock, scissors or paper
-*/
-function updateCpuChoice(computerMove) {
-  let btn = document.getElementById('cpu-move');
-  btn.innerHTML = computerMove;
+function displayScore() {
+  console.log(`Player's Score: ${playerScore} \nComputer's Score: ${cpuScore}`);
 }
 
 /*
- * displays the recorded tally in the document
-*/
-function displayTally() {
-  console.log(`Player Score: ${playerTally} \nComputer Score: ${computerTally}`);
-  document.getElementById('playerTally').innerHTML = `${playerTally}`;
-  document.getElementById('computerTally').innerHTML = `${computerTally}`;
+ * returns the string input via a prompt request
+ */
+function getInput() {
+  return document.getElementById('player-move').value;
 }
 
 /*
@@ -69,7 +55,7 @@ function displayTally() {
  * https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
  */
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /*
@@ -83,56 +69,55 @@ function getRandomInt(min, max) {
  */
 function compareMoves(playerMove, random) {
   const computerMove = initialiseComputerMove(random);
-  if(computerMove === 'rock'){
-    updateCpuChoice(rockEmoji);
-    if(playerMove === computerMove){
+  if (computerMove === 'rock') {
+    if (playerMove === computerMove) {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('DRAW');
-    }else if(playerMove === 'scissors'){
+    } else if (playerMove === 'scissors') {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('Computer Wins');
-      incrementTally('computer');
-    }else if(playerMove === 'paper'){
+      incrementScore(cpu);
+    } else if (playerMove === 'paper') {
       console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
       console.log('You Win! Well played!');
-      incrementTally('player');
-    }else{
-      console.log('Please enter a valid move!');
-    }
-  } if(computerMove === 'scissors'){
-    updateCpuChoice(scissorEmoji);
-      if(playerMove === computerMove){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('DRAW');
-      }else if(playerMove === 'rock'){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('You Win! Well played!');
-        incrementTally('player');
-      }else if(playerMove === 'paper'){
-        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-        console.log('Computer Wins!');
-        incrementTally('computer');
-      }else{
-        console.log('Please enter a valid move!');
-      }
-} if(computerMove === 'paper'){
-    updateCpuChoice(paperEmoji);
-    if(playerMove === computerMove){
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('DRAW');
-    }else if(playerMove === 'rock'){
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('Computer Wins!');
-      incrementTally('computer');
-    }else if(playerMove === 'scissors'){
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('You Win! Well played!');
-      incrementTally('player');
-    }else{
+      incrementScore(player);
+    } else {
       console.log('Please enter a valid move!');
     }
   }
-  displayTally();
+  if (computerMove === 'scissors') {
+    if (playerMove === computerMove) {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('DRAW');
+    } else if (playerMove === 'rock') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('You Win! Well played!');
+      incrementScore(player);
+    } else if (playerMove === 'paper') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('Computer Wins!');
+      incrementScore(cpu);
+    } else {
+      console.log('Please enter a valid move!');
+    }
+  }
+  if (computerMove === 'paper') {
+    if (playerMove === computerMove) {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('DRAW');
+    } else if (playerMove === 'rock') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('Computer Wins!');
+      incrementScore(cpu);
+    } else if (playerMove === 'scissors') {
+      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+      console.log('You Win! Well played!');
+      incrementScore(player);
+    } else {
+      console.log('Please enter a valid move!');
+    }
+  }
+  displayScore();
 }
 
 /*
@@ -144,12 +129,12 @@ function compareMoves(playerMove, random) {
  * @return
  *   the move that the computer will play
  */
-function initialiseComputerMove(random){
-  if(random === 0) {
+function initialiseComputerMove(random) {
+  if (random === 0) {
     return 'rock';
-  }else if(random === 1) {
+  } else if (random === 1) {
     return 'scissors';
-  }else if(random === 2){
+  } else if (random === 2) {
     return 'paper';
   }
 }

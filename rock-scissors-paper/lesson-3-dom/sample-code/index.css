@@ -2,235 +2,317 @@
 @import url('https://fonts.googleapis.com/css?family=Knewave');
 
 * {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oleo Script', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oleo Script', cursive;
 }
 
-h1, h2, p, span {
+/* .controls:after {
+  content: '|';
+  height: 100%;
+  position: relative;
+} */
+
+.btns-container .details {
+  margin-bottom: 20px;
   color: #fff;
-  z-index: 500;
 }
 
-.head-foot {
-  height: 25vh;
-  width: 100vw;
+.moves-btn {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  font-size: 5vw;
+}
+
+.btns {
+  width: 100%;
   display: flex;
+  justify-content: space-evenly;
+}
+
+.btns-container:nth-child(1) {
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btns-container:nth-child(2) {
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btns-container {
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+}
+
+.btns-container {
+  display: flex;
   flex-direction: column;
 }
-.head-foot > p {
-  width: 80vw;
-  font-size: 20px;
-  font-weight: 100;
-  text-align: center;
-}
 
-#footer {
-  flex-direction: row;
+#game-controls {
+  display: flex;
+  margin-top: 40px;
 }
 
 #game-content {
-  height: 50vh;
+  position: absolute;
+  top: 0;
+}
+
+h1, h2, p, span, input, button {
+  z-index: 10;
+  font-weight: 100;
+}
+
+.head-foot p {
+  margin-top: 20px;
+  font-weight: 100;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.head-foot, #controls {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.play {
-  width: 40vw;
-  height: 100%;
-}
-
-#options {
-  display: flex;
-  justify-content: space-between;
-}
-
-#comp-choice {
-  display: flex;
-  z-index: 500;
-  justify-content: center;
-  align-items: center;
-}
-
-#comp-choice .rsp-choice {
-  cursor: not-allowed;
-  min-width: 50%;
-  max-width: 50%;
-}
-
-.option {
-  width: 33%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#versus {
-  width: 20vw;
-  font-size: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rsp-choice {
-  z-index: 500;
-  min-width: 95%;
-  max-width: 95%;
-  min-height: 24%;
-  max-height: 24%;
-  font-size: 80px;
-  cursor: pointer;
-  border: 2px inset #6fb6cc7a;
-  border-radius: 20%;
-  box-shadow: 0 2px 2px 0 rgba(111, 182, 204, 0.47), 0 0 0 1px rgba(111, 182, 204, 0.47);
-}
-
-.interactive-btn:hover {
-  background-color: #dadada;
-  box-shadow: 0 2px 2px 0 rgba(111, 182, 204, 0.87), 0 0 0 1px rgba(111, 182, 204, 0.87);
-}
-
-.rsp-choice:focus {
-  outline: 0;
-}
-
-.scores {
-  width: 50vw;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-size: 50px;
-  color: white;
-  z-index: 500;
-}
-
-.submitField{
-  font-size: 30px;
-  height: 30px;
-  width: 150px;
-  position: absolute;
-  top: 40vh;
-  left: 20vh;
-  z-index: 500;
+  padding-top: 60px;
+  color: #fff;
 }
 
 #heading {
-  font-size: 100px;
+  font-size: 6em;
   font-family: 'Knewave', cursive;
   font-weight: 100;
+  text-align: center;
 }
 
-.tally {
-  position: relative;
-  font-size: 50px;
-  color: white;
-  z-index: 500;
+#controls button {
+  height: 50px;
+  width: 120px;
 }
 
-h1::after {
-  content: "\01F31A";
+#controls input {
+  height: 25px;
+  width: 120px;
+  margin-bottom: 20px;
 }
 
-header {
-    background-color:rgba(33, 33, 33, 0.9);
-    color:#ffffff;
-    display:block;
-    font: 14px/1.3 Arial,sans-serif;
-    height:50px;
-    position:relative;
-    z-index:5;
+/*
+ * DO NOT EDIT BELOW THIS
+ * CSS for original background animation
+ * credit: https://codepen.io/Mamboleoo/pen/BxMQYQ
+ */
+
+body {
+  margin: 0;
+  overflow: hidden;
 }
 
-header h2{
-    font-size: 22px;
-    margin: 0 auto;
-    padding: 10px 0;
-    width: 80%;
-    text-align: center;
-}
-header a, a:visited {
-    text-decoration:none;
-    color:#fcfcfc;
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: #4fa1d7;
 }
 
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.background span {
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 20vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-@-webkit-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.background span:nth-child(1) {
+  color: #fbb6c7;
+  top: 93%;
+  left: 16%;
+  animation-duration: 14.6s;
+  animation-delay: -8.4s;
+  transform-origin: 22vw 9vh;
+  box-shadow: 40vmin 0 5.916648629vmin currentColor;
 }
-@-moz-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.background span:nth-child(2) {
+  color: #fbb6c7;
+  top: 73%;
+  left: 22%;
+  animation-duration: 10.2s;
+  animation-delay: -12s;
+  transform-origin: -14vw 21vh;
+  box-shadow: 40vmin 0 7.3611622386vmin currentColor;
 }
-@-ms-keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
+.background span:nth-child(3) {
+  color: #73890e;
+  top: 2%;
+  left: 82%;
+  animation-duration: 14.1s;
+  animation-delay: -6.5s;
+  transform-origin: -12vw 7vh;
+  box-shadow: 40vmin 0 14.1096122018vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #0a5f71;
+  top: 18%;
+  left: 2%;
+  animation-duration: 13.4s;
+  animation-delay: -10.2s;
+  transform-origin: 19vw -13vh;
+  box-shadow: -40vmin 0 13.9497675456vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: #73890e;
+  top: 26%;
+  left: 84%;
+  animation-duration: 13.6s;
+  animation-delay: -5.8s;
+  transform-origin: 12vw -24vh;
+  box-shadow: 40vmin 0 11.5619608552vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: #0a5f71;
+  top: 57%;
+  left: 37%;
+  animation-duration: 12.6s;
+  animation-delay: -14.7s;
+  transform-origin: -10vw 4vh;
+  box-shadow: -40vmin 0 5.9010344659vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: #0a5f71;
+  top: 68%;
+  left: 40%;
+  animation-duration: 10.3s;
+  animation-delay: -12.8s;
+  transform-origin: -20vw 12vh;
+  box-shadow: 40vmin 0 9.4776195393vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: #fbb6c7;
+  top: 3%;
+  left: 3%;
+  animation-duration: 11.6s;
+  animation-delay: -11.2s;
+  transform-origin: 1vw 3vh;
+  box-shadow: 40vmin 0 6.3677963306vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: #0a5f71;
+  top: 21%;
+  left: 29%;
+  animation-duration: 10.9s;
+  animation-delay: -12.8s;
+  transform-origin: -21vw -8vh;
+  box-shadow: -40vmin 0 8.1776398322vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: #fbb6c7;
+  top: 38%;
+  left: 12%;
+  animation-duration: 14.8s;
+  animation-delay: -2s;
+  transform-origin: 17vw -11vh;
+  box-shadow: -40vmin 0 12.8278320562vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: #73890e;
+  top: 55%;
+  left: 81%;
+  animation-duration: 13.8s;
+  animation-delay: -14s;
+  transform-origin: 3vw -24vh;
+  box-shadow: -40vmin 0 13.5561021427vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: #0a5f71;
+  top: 89%;
+  left: 12%;
+  animation-duration: 11.1s;
+  animation-delay: -8.3s;
+  transform-origin: -16vw -21vh;
+  box-shadow: 40vmin 0 9.3844641287vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: #73890e;
+  top: 72%;
+  left: 73%;
+  animation-duration: 12s;
+  animation-delay: -14.1s;
+  transform-origin: -24vw -12vh;
+  box-shadow: -40vmin 0 12.5008506449vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: #fbb6c7;
+  top: 67%;
+  left: 68%;
+  animation-duration: 15.3s;
+  animation-delay: -0.7s;
+  transform-origin: 18vw 5vh;
+  box-shadow: 40vmin 0 11.9988862673vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: #0a5f71;
+  top: 46%;
+  left: 3%;
+  animation-duration: 14.8s;
+  animation-delay: -8.4s;
+  transform-origin: -2vw 8vh;
+  box-shadow: -40vmin 0 11.8926699483vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: #0a5f71;
+  top: 92%;
+  left: 18%;
+  animation-duration: 14.7s;
+  animation-delay: -0.7s;
+  transform-origin: -22vw -17vh;
+  box-shadow: 40vmin 0 14.5432874025vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: #fbb6c7;
+  top: 8%;
+  left: 77%;
+  animation-duration: 12.6s;
+  animation-delay: -7.5s;
+  transform-origin: -5vw -2vh;
+  box-shadow: 40vmin 0 8.9870200002vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: #0a5f71;
+  top: 9%;
+  left: 67%;
+  animation-duration: 10.2s;
+  animation-delay: -8.7s;
+  transform-origin: -20vw 5vh;
+  box-shadow: -40vmin 0 12.676954822vmin currentColor;
+}
+.background span:nth-child(19) {
+  color: #73890e;
+  top: 26%;
+  left: 53%;
+  animation-duration: 14.4s;
+  animation-delay: -10.9s;
+  transform-origin: -8vw 11vh;
+  box-shadow: 40vmin 0 8.9910653729vmin currentColor;
+}
+.background span:nth-child(20) {
+  color: #73890e;
+  top: 78%;
+  left: 86%;
+  animation-duration: 15s;
+  animation-delay: -7.9s;
+  transform-origin: -16vw -16vh;
+  box-shadow: 40vmin 0 13.0020391969vmin currentColor;
 }
 
-@keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-webkit-keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-moz-keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
-}
-@-ms-keyframes move-clouds-back {
-    from {background-position: 0;}
-    to {background-position:10000px 0;}
-}
-
-.stars, .twinkling, .clouds {
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-.stars {
-  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-  z-index:0;
-}
-
-.twinkling{
-  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-  z-index:1;
-
-  -moz-animation:move-twink-back 200s linear infinite;
-  -ms-animation:move-twink-back 200s linear infinite;
-  -o-animation:move-twink-back 200s linear infinite;
-  -webkit-animation:move-twink-back 200s linear infinite;
-  animation:move-twink-back 200s linear infinite;
-}
-
-.clouds{
-    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
-    z-index:3;
-
-  -moz-animation:move-clouds-back 200s linear infinite;
-  -ms-animation:move-clouds-back 200s linear infinite;
-  -o-animation:move-clouds-back 200s linear infinite;
-  -webkit-animation:move-clouds-back 200s linear infinite;
-  animation:move-clouds-back 200s linear infinite;
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
 }
