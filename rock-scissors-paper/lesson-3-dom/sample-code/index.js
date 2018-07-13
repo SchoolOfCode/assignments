@@ -1,3 +1,5 @@
+let timer;
+
 /*
  * initialising scores for both the player and the computer
  */
@@ -10,11 +12,83 @@ let cpuScore = 0;
 const player = 'player';
 const cpu = 'computer';
 
+const rockEmoji = '&#x26F0;';
+const scissorsEmoji = '&#x2702;';
+const paperEmoji = '&#x1F4C4;';
+
 /*
  * play a move each time the user clicks the button
  */
-function playGame() {
-  compareMoves(getInput(), getRandomInt(0, 2));
+function playGame(playerMove) {
+  compareMoves(playerMove, getRandomInt(0, 2));
+
+}
+
+function gameWon(playerHasWon) {
+  const celebration = document.getElementById('celebration');
+  const lost = document.getElementById('game-loss');
+  const gameContent = document.getElementById('game-content');
+
+  gameContent.style.display = 'none';
+
+  if(playerHasWon) {
+    celebration.classList.add('drop-in');
+  } else {
+    lost.classList.add('drop-in');
+  }
+}
+
+function reload() {
+  location.reload(true);
+}
+
+function getEmoji(move) {
+  if(move === 'rock') {
+    return rockEmoji;
+  } else if(move === 'scissors') {
+    return scissorsEmoji;
+  } else if(move === 'paper') {
+    return paperEmoji;
+  } else {
+    console.warn('Cannot read type of move');
+  }
+}
+
+function displayMoves(playerMove, cpuMove) {
+  countdown(3);
+  const playerPlaceholder = document.querySelector('#player-move > span.rsp-choice');
+  const cpuPlaceholder = document.querySelector('#cpu-move > span.rsp-choice');
+  toggleAnimation();
+  playerPlaceholder.innerHTML = playerMove;
+  cpuPlaceholder.innerHTML = cpuMove;
+  timer = 0;
+}
+
+function toggleAnimation() {
+  const rspChoices = document.querySelectorAll('.rsp-choice');
+  for(let i = 0; i < rspChoices.length; i++) {
+    rspChoices[i].classList.toggle('make-move');
+  }
+}
+
+/*
+ * counts down from max to zero
+ *
+ * @param {number}
+ *   specifies the the number to count down from
+ */
+function countdown(max) {
+  let time = max;
+  const versus = document.getElementById('timer');
+
+  return setInterval(function() {
+    versus.innerHTML = null;
+    versus.innerHTML = time;
+    if(time < 1)
+      clearInterval();
+    else
+      time--;
+  }, 1000);
 }
 
 /*
@@ -30,15 +104,10 @@ function incrementScore(player) {
   }
 }
 
-function displayScore() {
+function displayScore(player) {
   console.log(`Player's Score: ${playerScore} \nComputer's Score: ${cpuScore}`);
-}
-
-/*
- * returns the string input via a prompt request
- */
-function getInput() {
-  return document.getElementById('player-move').value;
+  document.getElementById('player-score').innerHTML = `${playerScore}`;
+  document.getElementById('cpu-score').innerHTML = `${cpuScore}`;
 }
 
 /*
@@ -69,55 +138,65 @@ function getRandomInt(min, max) {
  */
 function compareMoves(playerMove, random) {
   const computerMove = initialiseComputerMove(random);
-  if (computerMove === 'rock') {
-    if (playerMove === computerMove) {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('DRAW');
-    } else if (playerMove === 'scissors') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('Computer Wins');
-      incrementScore(cpu);
-    } else if (playerMove === 'paper') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('You Win! Well played!');
-      incrementScore(player);
-    } else {
-      console.log('Please enter a valid move!');
+  displayMoves(getEmoji(playerMove), getEmoji(computerMove));
+  setTimeout(function() {
+    if (computerMove === 'rock') {
+      if (playerMove === computerMove) {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('DRAW');
+      } else if (playerMove === 'scissors') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('Computer Wins');
+        incrementScore(cpu);
+      } else if (playerMove === 'paper') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('You Win! Well played!');
+        incrementScore(player);
+      } else {
+        console.log('Please enter a valid move!');
+      }
     }
-  }
-  if (computerMove === 'scissors') {
-    if (playerMove === computerMove) {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('DRAW');
-    } else if (playerMove === 'rock') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('You Win! Well played!');
-      incrementScore(player);
-    } else if (playerMove === 'paper') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('Computer Wins!');
-      incrementScore(cpu);
-    } else {
-      console.log('Please enter a valid move!');
+    if (computerMove === 'scissors') {
+      if (playerMove === computerMove) {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('DRAW');
+      } else if (playerMove === 'rock') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('You Win! Well played!');
+        incrementScore(player);
+      } else if (playerMove === 'paper') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('Computer Wins!');
+        incrementScore(cpu);
+      } else {
+        console.log('Please enter a valid move!');
+      }
     }
-  }
-  if (computerMove === 'paper') {
-    if (playerMove === computerMove) {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('DRAW');
-    } else if (playerMove === 'rock') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('Computer Wins!');
-      incrementScore(cpu);
-    } else if (playerMove === 'scissors') {
-      console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
-      console.log('You Win! Well played!');
-      incrementScore(player);
-    } else {
-      console.log('Please enter a valid move!');
+    if (computerMove === 'paper') {
+      if (playerMove === computerMove) {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('DRAW');
+      } else if (playerMove === 'rock') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('Computer Wins!');
+        incrementScore(cpu);
+      } else if (playerMove === 'scissors') {
+        console.log(`Your move is ${playerMove} and the Computer move is ${computerMove}`);
+        console.log('You Win! Well played!');
+        incrementScore(player);
+      } else {
+        console.log('Please enter a valid move!');
+      }
     }
-  }
-  displayScore();
+    displayScore();
+    toggleAnimation();
+    if(playerScore > 1 || cpuScore > 1) {
+      if(playerScore > 1)
+        gameWon(true);
+      else
+        gameWon(false);
+    }
+  }, 4000);
 }
 
 /*
