@@ -28,11 +28,13 @@ function gameWon(playerHasWon) {
   const celebration = document.getElementById('celebration');
   const lost = document.getElementById('game-loss');
   const gameContent = document.getElementById('game-content');
+  const confetti = document.getElementById('canvas');
 
   gameContent.style.display = 'none';
 
   if(playerHasWon) {
     celebration.classList.add('drop-in');
+    confetti.style.zIndex = '0';
   } else {
     lost.classList.add('drop-in');
   }
@@ -190,12 +192,14 @@ function compareMoves(playerMove, random) {
     }
     displayScore();
     toggleAnimation();
-    if(playerScore > 1 || cpuScore > 1) {
-      if(playerScore > 1)
-        gameWon(true);
-      else
-        gameWon(false);
-    }
+    setTimeout(function () {
+      if(playerScore > 1 || cpuScore > 1) {
+        if(playerScore > 1)
+          gameWon(true);
+        else
+          gameWon(false);
+      }
+    }, 300);    
   }, 4000);
 }
 
