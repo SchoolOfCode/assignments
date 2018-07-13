@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script');
 @import url('https://fonts.googleapis.com/css?family=Knewave');
-
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +7,19 @@
   font-family: 'Oleo Script', cursive;
 }
 
+.behind {
+  z-index: 0;
+}
+
 .play-again button {
   height: 10vh;
   width: 10vw;
-  border-radius: 5%;;
+  border-radius: 5%;
+  z-index: 10;
+}
+
+.play-again {
+  z-index: 10;
 }
 
 .face {
@@ -55,6 +63,7 @@
   position: absolute;
   top: -100vh;
 }
+
 #game-loss {
   position: absolute;
   top: -200vh;
@@ -116,9 +125,31 @@
   }
 }
 
-.btns-container .details {
+.game-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.details {
   margin-bottom: 20px;
   color: #fff;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.active-disallowed {
+  cursor: not-allowed;
+}
+
+.active-allowed:hover {
+  background-color: #e1e1e6;
+}
+.active-allowed {
+  cursor: pointer;
 }
 
 .moves-btn {
@@ -126,6 +157,7 @@
   height: 10vw;
   border-radius: 50%;
   font-size: 5vw;
+  border: 2.7px solid #53f8ad;
 }
 
 .btns {
@@ -147,10 +179,7 @@
   flex: 1 1 50%;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.btns-container {
-  display: flex;
+  font-size: 0.8em;
   flex-direction: column;
 }
 

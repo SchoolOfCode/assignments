@@ -14,26 +14,26 @@
   <div class="twinkling"></div>
   <div class="clouds"></div> -->
   <div class="background">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
+    <span class="behind"></span>
   </div>
   <div id="game-loss" class="game-over">
     <h1 class="decision">You didn't manage to win this time...</h1>
@@ -63,17 +63,20 @@
       <div class="btns-container">
         <h1 class="details">Choose a move to play</h1>
         <div class="btns">
-          <button type="button" class="moves-btn" id="rock" onclick="playGame(this.id)"><span class="emoji">&#x26F0;</span></button>
-          <button type="button" class="moves-btn" id="scissors" onclick="playGame(this.id)"><span class="emoji">&#x2702;</span></button>
-          <button type="button" class="moves-btn" id="paper" onclick="playGame(this.id)"><span class="emoji">&#x1F4C4;</span></button>
+          <button type="button" class="moves-btn active-allowed" id="rock" onclick="playGame(this.id)"><span class="emoji">&#x26F0;</span></button>
+          <button type="button" class="moves-btn active-allowed" id="scissors" onclick="playGame(this.id)"><span class="emoji">&#x2702;</span></button>
+          <button type="button" class="moves-btn active-allowed" id="paper" onclick="playGame(this.id)"><span class="emoji">&#x1F4C4;</span></button>
         </div>
       </div>
       <div class="btns-container">
-        <h1 class="details">Vursus</h1>
+        <div class="game-details">
+          <h1 class="details">Player Move</h1>
+          <h1 class="details">Computer Move</h1>
+        </div>
         <div class="btns">
-          <button type="button" class="moves-btn" id="player-move"><span class="rsp-choice"></span></button>
-          <button type="button" class="moves-btn" id="versus"><span id="timer">VS</span></button>
-          <button type="button" class="moves-btn" id="cpu-move"><span class="rsp-choice"></span></button>
+          <button type="button" class="moves-btn active-disallowed" id="player-move"><span class="rsp-choice"></span></button>
+          <button type="button" class="moves-btn active-disallowed" id="versus"><span id="timer">VS</span></button>
+          <button type="button" class="moves-btn active-disallowed" id="cpu-move"><span class="rsp-choice"></span></button>
         </div>
       </div>
     </div>
