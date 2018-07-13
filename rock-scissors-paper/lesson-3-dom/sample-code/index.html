@@ -35,6 +35,25 @@
     <span></span>
     <span></span>
   </div>
+  <div id="game-loss" class="game-over">
+    <h1 class="decision">You didn't manage to win this time...</h1>
+    <img src="sad-face.svg" alt="Happy Face" class="face">
+    <div class="play-again">
+      <button type="button" onclick="reload()">
+        Play again?
+      </button>
+    </div>
+  </div>
+  <div id="celebration" class="game-over">
+    <h1 class="decision">You won the best out of 3, Congratulations!</h1>
+    <img src="happy-face.svg" alt="Happy Face" class="face">
+    <div class="play-again">
+      <button type="button" onclick="reload()">
+        Play again?
+      </button>
+    </div>
+  </div>
+  <canvas id="canvas"></canvas>
   <div id="game-content">
     <div class="head-foot">
       <h1 id="heading">Enter a move pal &#x1F31A;</h1>
@@ -42,26 +61,37 @@
     </div>
     <div id="game-controls">
       <div class="btns-container">
-        <h2 class="details">Choose a move to play</h2>
+        <h1 class="details">Choose a move to play</h1>
         <div class="btns">
-          <button type="button" class="moves-btn" id="#rock"><span class="emoji">&#x26F0;</span></button>
-          <button type="button" class="moves-btn" id="#scissors"><span class="emoji">&#x2702;</span></button>
-          <button type="button" class="moves-btn" id="#paper"><span class="emoji">&#x1F4C4;</span></button>
+          <button type="button" class="moves-btn" id="rock" onclick="playGame(this.id)"><span class="emoji">&#x26F0;</span></button>
+          <button type="button" class="moves-btn" id="scissors" onclick="playGame(this.id)"><span class="emoji">&#x2702;</span></button>
+          <button type="button" class="moves-btn" id="paper" onclick="playGame(this.id)"><span class="emoji">&#x1F4C4;</span></button>
         </div>
       </div>
       <div class="btns-container">
-        <h2 class="details"></h2>
+        <h1 class="details">Vursus</h1>
         <div class="btns">
-          <button type="button" class="moves-btn" id="#player-move"><span>&#x26F0;</span></button>
-          <button type="button" class="moves-btn" id="#versus"><span>VS</span></button>
-          <button type="button" class="moves-btn" id="#cpu-move"><span>&#x2702;</span></button>
+          <button type="button" class="moves-btn" id="player-move"><span class="rsp-choice"></span></button>
+          <button type="button" class="moves-btn" id="versus"><span id="timer">VS</span></button>
+          <button type="button" class="moves-btn" id="cpu-move"><span class="rsp-choice"></span></button>
         </div>
+      </div>
+    </div>
+    <div id="footer" class="head-foot">
+      <div class="score">
+        <h1>Player Score</h1>
+        <p id="player-score">0<p>
+      </div>
+      <div class="score">
+        <h1>Computer Score</h1>
+        <p id="cpu-score">0<p>
       </div>
     </div>
   </div>
 
 
   <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="canvas-resize.js"></script>
 </body>
 
 </html>

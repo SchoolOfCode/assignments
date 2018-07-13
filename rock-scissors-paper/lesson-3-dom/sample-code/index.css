@@ -8,11 +8,113 @@
   font-family: 'Oleo Script', cursive;
 }
 
-/* .controls:after {
-  content: '|';
-  height: 100%;
-  position: relative;
-} */
+.play-again button {
+  height: 10vh;
+  width: 10vw;
+  border-radius: 5%;;
+}
+
+.face {
+  width: 40vw;
+  height: 40vh;
+}
+
+.decision {
+  font-size: 10vh;
+  text-align: center;
+  color: #53f8ad;
+}
+
+.drop-in {
+  animation-name: drop-in;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0, 0.82, 1, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes drop-in {
+  0% {
+    top: -100vh;
+  }
+  10% {
+    top: -80v
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: -100vh;
+}
+#game-loss {
+  position: absolute;
+  top: -200vh;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  background: transparent;
+}
+
+#footer .score p {
+  font-size: 3em;
+}
+
+.score {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5vh;
+}
+
+.rsp-choice {
+  margin-right: 5vw;
+  opacity: 0.7;
+  filter: blur(1vw);
+}
+
+.make-move {
+  animation-name: make-move;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0, 0.82, 1, 1);
+}
+
+@keyframes make-move {
+  0% {
+    margin-right: 5vw;
+    opacity: 0.7;
+    filter: blur(1vw);
+  }
+  75% {
+    margin-right: -5vw;
+    opacity: 0.9;
+    filter: blur(0.7vw);
+  }
+  100% {
+    margin-right: 0vw;
+    opacity: 1;
+    filter: blur(0vw);
+  }
+}
 
 .btns-container .details {
   margin-bottom: 20px;
@@ -60,6 +162,12 @@
 #game-content {
   position: absolute;
   top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* display: none; */
 }
 
 h1, h2, p, span, input, button {
@@ -68,9 +176,8 @@ h1, h2, p, span, input, button {
 }
 
 .head-foot p {
-  margin-top: 20px;
   font-weight: 100;
-  font-size: 1.6em;
+  font-size: 1.3em;
   text-align: center;
 }
 
@@ -80,7 +187,6 @@ h1, h2, p, span, input, button {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 60px;
   color: #fff;
 }
 
@@ -130,6 +236,7 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 .background span:nth-child(1) {
   color: #fbb6c7;
   top: 93%;
@@ -139,6 +246,7 @@ body {
   transform-origin: 22vw 9vh;
   box-shadow: 40vmin 0 5.916648629vmin currentColor;
 }
+
 .background span:nth-child(2) {
   color: #fbb6c7;
   top: 73%;
@@ -148,6 +256,7 @@ body {
   transform-origin: -14vw 21vh;
   box-shadow: 40vmin 0 7.3611622386vmin currentColor;
 }
+
 .background span:nth-child(3) {
   color: #73890e;
   top: 2%;
@@ -157,6 +266,7 @@ body {
   transform-origin: -12vw 7vh;
   box-shadow: 40vmin 0 14.1096122018vmin currentColor;
 }
+
 .background span:nth-child(4) {
   color: #0a5f71;
   top: 18%;
@@ -166,6 +276,7 @@ body {
   transform-origin: 19vw -13vh;
   box-shadow: -40vmin 0 13.9497675456vmin currentColor;
 }
+
 .background span:nth-child(5) {
   color: #73890e;
   top: 26%;
@@ -175,6 +286,7 @@ body {
   transform-origin: 12vw -24vh;
   box-shadow: 40vmin 0 11.5619608552vmin currentColor;
 }
+
 .background span:nth-child(6) {
   color: #0a5f71;
   top: 57%;
@@ -184,6 +296,7 @@ body {
   transform-origin: -10vw 4vh;
   box-shadow: -40vmin 0 5.9010344659vmin currentColor;
 }
+
 .background span:nth-child(7) {
   color: #0a5f71;
   top: 68%;
@@ -193,6 +306,7 @@ body {
   transform-origin: -20vw 12vh;
   box-shadow: 40vmin 0 9.4776195393vmin currentColor;
 }
+
 .background span:nth-child(8) {
   color: #fbb6c7;
   top: 3%;
@@ -202,6 +316,7 @@ body {
   transform-origin: 1vw 3vh;
   box-shadow: 40vmin 0 6.3677963306vmin currentColor;
 }
+
 .background span:nth-child(9) {
   color: #0a5f71;
   top: 21%;
@@ -211,6 +326,7 @@ body {
   transform-origin: -21vw -8vh;
   box-shadow: -40vmin 0 8.1776398322vmin currentColor;
 }
+
 .background span:nth-child(10) {
   color: #fbb6c7;
   top: 38%;
@@ -220,6 +336,7 @@ body {
   transform-origin: 17vw -11vh;
   box-shadow: -40vmin 0 12.8278320562vmin currentColor;
 }
+
 .background span:nth-child(11) {
   color: #73890e;
   top: 55%;
@@ -229,6 +346,7 @@ body {
   transform-origin: 3vw -24vh;
   box-shadow: -40vmin 0 13.5561021427vmin currentColor;
 }
+
 .background span:nth-child(12) {
   color: #0a5f71;
   top: 89%;
@@ -238,6 +356,7 @@ body {
   transform-origin: -16vw -21vh;
   box-shadow: 40vmin 0 9.3844641287vmin currentColor;
 }
+
 .background span:nth-child(13) {
   color: #73890e;
   top: 72%;
@@ -247,6 +366,7 @@ body {
   transform-origin: -24vw -12vh;
   box-shadow: -40vmin 0 12.5008506449vmin currentColor;
 }
+
 .background span:nth-child(14) {
   color: #fbb6c7;
   top: 67%;
@@ -256,6 +376,7 @@ body {
   transform-origin: 18vw 5vh;
   box-shadow: 40vmin 0 11.9988862673vmin currentColor;
 }
+
 .background span:nth-child(15) {
   color: #0a5f71;
   top: 46%;
@@ -265,6 +386,7 @@ body {
   transform-origin: -2vw 8vh;
   box-shadow: -40vmin 0 11.8926699483vmin currentColor;
 }
+
 .background span:nth-child(16) {
   color: #0a5f71;
   top: 92%;
@@ -274,6 +396,7 @@ body {
   transform-origin: -22vw -17vh;
   box-shadow: 40vmin 0 14.5432874025vmin currentColor;
 }
+
 .background span:nth-child(17) {
   color: #fbb6c7;
   top: 8%;
@@ -283,6 +406,7 @@ body {
   transform-origin: -5vw -2vh;
   box-shadow: 40vmin 0 8.9870200002vmin currentColor;
 }
+
 .background span:nth-child(18) {
   color: #0a5f71;
   top: 9%;
@@ -292,6 +416,7 @@ body {
   transform-origin: -20vw 5vh;
   box-shadow: -40vmin 0 12.676954822vmin currentColor;
 }
+
 .background span:nth-child(19) {
   color: #73890e;
   top: 26%;
@@ -301,6 +426,7 @@ body {
   transform-origin: -8vw 11vh;
   box-shadow: 40vmin 0 8.9910653729vmin currentColor;
 }
+
 .background span:nth-child(20) {
   color: #73890e;
   top: 78%;
