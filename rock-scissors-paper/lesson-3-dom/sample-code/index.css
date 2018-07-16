@@ -8,18 +8,18 @@
 }
 
 .behind {
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 .play-again button {
   height: 10vh;
   width: 10vw;
   border-radius: 5%;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .play-again {
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .face {
@@ -39,6 +39,7 @@
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0, 0.82, 1, 1);
   animation-fill-mode: forwards;
+  background-color: rgba(0,0,0,0.3)
 }
 
 @keyframes drop-in {
@@ -72,7 +73,7 @@
 #canvas {
   position: fixed;
   top: 0;
-  z-index: -1;
+  /* z-index: -1; */
   background: transparent;
 }
 
@@ -95,9 +96,9 @@
 }
 
 .rsp-choice {
-  margin-right: 5vw;
-  opacity: 0.7;
-  filter: blur(1vw);
+  /* margin-right: 5vw; */
+  /* opacity: 0.7; */
+  /* filter: blur(1vw); */
 }
 
 .make-move {
@@ -105,21 +106,22 @@
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0, 0.82, 1, 1);
+  animation-fill-mode: forwards;
 }
 
 @keyframes make-move {
   0% {
-    margin-right: 5vw;
+    /* margin-right: 5vw; */
     opacity: 0.7;
     filter: blur(1vw);
   }
   75% {
-    margin-right: -5vw;
+    /* margin-right: -5vw; */
     opacity: 0.9;
     filter: blur(0.7vw);
   }
   100% {
-    margin-right: 0vw;
+    /* margin-right: 0vw; */
     opacity: 1;
     filter: blur(0vw);
   }
@@ -200,7 +202,7 @@ button:focus {
 }
 
 h1, h2, p, span, input, button {
-  z-index: 10;
+  /* z-index: 10; */
   font-weight: 100;
 }
 

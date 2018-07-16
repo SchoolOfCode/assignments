@@ -35,6 +35,44 @@
     <span class="behind"></span>
     <span class="behind"></span>
   </div>
+  <!-- <canvas id="canvas"></canvas> -->
+  <div id="game-content">
+    <div class="head-foot">
+      <h1 id="heading">Enter a move pal &#x1F31A;</h1>
+      <p>Win: 1 point to you <br>Lose: 1 point to the computer <br> Draw: No points awarded</p>
+    </div>
+    <div id="game-controls">
+      <div class="btns-container">
+        <h1 class="details">Choose a move to play</h1>
+        <div class="btns">
+          <button type="button" class="moves-btn inputs active-allowed" id="rock" onclick="playGame('rock')"><span class="emoji">&#x26F0;</span></button>
+          <button type="button" class="moves-btn inputs active-allowed" id="scissors" onclick="playGame('scissors')"><span class="emoji">&#x2702;</span></button>
+          <button type="button" class="moves-btn inputs active-allowed" id="paper" onclick="playGame('paper')"><span class="emoji">&#x1F4C4;</span></button>
+        </div>
+      </div>
+      <div class="btns-container">
+        <div class="game-details">
+          <h1 class="details">Player Move</h1>
+          <h1 class="details">Computer Move</h1>
+        </div>
+        <div class="btns">
+          <button type="button" class="moves-btn rsp-choice active-disallowed" id="player-move"></button>
+          <button type="button" class="moves-btn active-disallowed" id="versus"><span id="timer">VS</span></button>
+          <button type="button" class="moves-btn rsp-choice active-disallowed" id="cpu-move"></button>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="head-foot">
+      <div class="score">
+        <h1>Player Score</h1>
+        <p id="player-score">0<p>
+      </div>
+      <div class="score">
+        <h1>Computer Score</h1>
+        <p id="cpu-score">0<p>
+      </div>
+    </div>
+  </div>
   <div id="game-loss" class="game-over">
     <h1 class="decision">You didn't manage to win this time...</h1>
     <img src="sad-face.svg" alt="Happy Face" class="face">
@@ -53,48 +91,8 @@
       </button>
     </div>
   </div>
-  <canvas id="canvas"></canvas>
-  <div id="game-content">
-    <div class="head-foot">
-      <h1 id="heading">Enter a move pal &#x1F31A;</h1>
-      <p>Win: 1 point to you <br>Lose: 1 point to the computer <br> Draw: No points awarded</p>
-    </div>
-    <div id="game-controls">
-      <div class="btns-container">
-        <h1 class="details">Choose a move to play</h1>
-        <div class="btns">
-          <button type="button" class="moves-btn active-allowed" id="rock" onclick="playGame(this.id)"><span class="emoji">&#x26F0;</span></button>
-          <button type="button" class="moves-btn active-allowed" id="scissors" onclick="playGame(this.id)"><span class="emoji">&#x2702;</span></button>
-          <button type="button" class="moves-btn active-allowed" id="paper" onclick="playGame(this.id)"><span class="emoji">&#x1F4C4;</span></button>
-        </div>
-      </div>
-      <div class="btns-container">
-        <div class="game-details">
-          <h1 class="details">Player Move</h1>
-          <h1 class="details">Computer Move</h1>
-        </div>
-        <div class="btns">
-          <button type="button" class="moves-btn active-disallowed" id="player-move"><span class="rsp-choice"></span></button>
-          <button type="button" class="moves-btn active-disallowed" id="versus"><span id="timer">VS</span></button>
-          <button type="button" class="moves-btn active-disallowed" id="cpu-move"><span class="rsp-choice"></span></button>
-        </div>
-      </div>
-    </div>
-    <div id="footer" class="head-foot">
-      <div class="score">
-        <h1>Player Score</h1>
-        <p id="player-score">0<p>
-      </div>
-      <div class="score">
-        <h1>Computer Score</h1>
-        <p id="cpu-score">0<p>
-      </div>
-    </div>
-  </div>
-
 
   <script type="text/javascript" src="index.js"></script>
-  <script type="text/javascript" src="canvas-resize.js"></script>
 </body>
 
 </html>
