@@ -18,7 +18,7 @@ This exercise will require you to use HTML **buttons** as the main controls for 
 Have a look below to see what you ~~can~~ will accomplish
 <span>&#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07;&#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07; &#x2B07;</span>
 
-![DOM level RSP game](http://g.recordit.co/3muaoW0NMg.gif)
+![DOM level RSP game](https://thumbs.gfycat.com/MemorableSoreLiger-size_restricted.gif)
 
 <span>&#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06;</span>
 # END	
