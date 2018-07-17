@@ -35,7 +35,7 @@ function playGame(playerMove) {
     incrementScore(result);
     checkGameOver();
     updateDisplay(playerMove, computerMove);
-    setTimeout(function() { toggleInputs(false) }, 2500 )
+    setTimeout(function() { toggleInputs(false) }, 2500 );
 }
 
 function toggleInputs(state) {
@@ -131,9 +131,8 @@ function getEmoji(move) {
     return SCISSORS_EMOJI;
   } else if (move === 'paper') {
     return PAPER_EMOJI;
-  } else {
-    console.warn('Cannot read type of move');
   }
+  return false;
 }
 
 /*
