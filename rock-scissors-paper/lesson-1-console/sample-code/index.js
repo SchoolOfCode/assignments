@@ -120,4 +120,11 @@ function initialiseComputerMove(random) {
   } else if (random === 2) {
     return PAPER;
   }
+  return false;
+}
+
+module.exports = {
+  getRandomInt,
+  compareMoves,
+  initialiseComputerMove
 }
