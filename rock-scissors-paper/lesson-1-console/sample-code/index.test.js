@@ -160,26 +160,26 @@ test.each([['rockk', 'paePer'], ['rock', 'fire'], ['lizard', 'spock'], [1, 1], [
 test.each([[0, ROCK], [1, SCISSORS], [2, PAPER]])(
   'random number "%s" maps to the computer move "%s"',
   (randomNum, assignedMove) => {
-    expect(index.initialiseComputerMove(randomNum)).toBe(assignedMove);
+    expect(index.getComputerMove(randomNum)).toBe(assignedMove);
   }, // <-- DO NOT REMOVE COMMA AT THE END OF ANON FUNCTION
 );
 
 /*
- * will test to see if initialiseComputerMove fn returns false after invalid input
+ * will test to see if getComputerMove fn returns false after invalid input
  */
 test.each([[3], ['roar'], [1.8]])(
   'the invalid input "%s" returns false from the function',
   (randomNum) => {
-    expect(index.initialiseComputerMove(randomNum)).toBe(false);
+    expect(index.getComputerMove(randomNum)).toBe(false);
   }, // <-- DO NOT REMOVE COMMA AT THE END OF ANON FUNCTION
 );
 
 /*
  * will test to see if getRandomInt returns ints between a min and max
  */
- test.each([[3], ['roar'], [1.8]])(
-   'the invalid input "%s" returns false from the function',
-   (randomNum) => {
-     expect(index.initialiseComputerMove(randomNum)).toBe(false);
-   }, // <-- DO NOT REMOVE COMMA AT THE END OF ANON FUNCTION
- );
+test.each([[3], ['roar'], [1.8]])(
+  'the invalid input "%s" returns false from the function',
+  (randomNum) => {
+    expect(index.getComputerMove(randomNum)).toBe(false);
+  }, // <-- DO NOT REMOVE COMMA AT THE END OF ANON FUNCTION
+);
