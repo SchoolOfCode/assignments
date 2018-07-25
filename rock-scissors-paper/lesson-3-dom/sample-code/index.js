@@ -15,6 +15,10 @@ const DRAW = 'draw';
 
 const SCORE_LIMIT = 1;
 
+const ROCK = 'rock';
+const SCISSORS = 'scissors';
+const PAPER = 'paper';
+
 const ROCK_EMOJI = '&#x26F0;';
 const SCISSORS_EMOJI = '&#x2702;';
 const PAPER_EMOJI = '&#x1F4C4;';
@@ -125,11 +129,11 @@ function reload() {
 }
 
 function getEmoji(move) {
-  if (move === 'rock') {
+  if (move === ROCK) {
     return ROCK_EMOJI;
-  } else if (move === 'scissors') {
+  } else if (move === SCISSORS) {
     return SCISSORS_EMOJI;
-  } else if (move === 'paper') {
+  } else if (move === PAPER) {
     return PAPER_EMOJI;
   }
   return false;
@@ -184,28 +188,28 @@ function getRandomInt(min, max) {
  *   random number to randomly determine which move the computer has chosen
  */
  function compareMoves(playerMove, computerMove){
-   if (computerMove === 'rock') {
+   if (computerMove === ROCK) {
      if (playerMove === computerMove) {
        return DRAW
-     } else if (playerMove === 'scissors') {
+     } else if (playerMove === SCISSORS) {
        return CPU
-     } else if (playerMove === 'paper') {
+     } else if (playerMove === PAPER) {
        return PLAYER
      }
-   } else if (computerMove === 'scissors') {
+   } else if (computerMove === SCISSORS) {
      if (playerMove === computerMove) {
        return DRAW
-     } else if (playerMove === 'rock') {
+     } else if (playerMove === ROCK) {
        return PLAYER
-     } else if (playerMove === 'paper') {
+     } else if (playerMove === PAPER) {
        return CPU
      }
-   } else if (computerMove === 'paper') {
+   } else if (computerMove === PAPER) {
      if (playerMove === computerMove) {
        return DRAW
-     } else if (playerMove === 'rock') {
+     } else if (playerMove === ROCK) {
        return CPU
-     } else if (playerMove === 'scissors') {
+     } else if (playerMove === SCISSORS) {
        return PLAYER
      }
    }
@@ -224,10 +228,16 @@ function getRandomInt(min, max) {
  */
 function getComputerMove(random) {
   if (random === 0) {
-    return 'rock';
+    return ROCK;
   } else if (random === 1) {
-    return 'scissors';
+    return SCISSORS;
   } else if (random === 2) {
-    return 'paper';
+    return PAPER;
   }
+}
+
+module.exports = {
+  getRandomInt,
+  compareMoves,
+  getComputerMove
 }
