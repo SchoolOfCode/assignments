@@ -15,21 +15,17 @@ const ROCK = 'rock';
 const SCISSORS = 'scissors';
 const PAPER = 'paper';
 
-const RANDOM_MIN = 0;
-const RANDOM_MAX = RANDOM_MIN + 2;
-const RANDOM_MID = RANDOM_MAX - 1;
-
 /*
  * play a move each time the user clicks the button
  */
 function playGame() {
-  const randomChoice = getRandomInt(RANDOM_MIN, RANDOM_MAX);
-  const computerMove = getComputerMove(randomChoice);
+  const randomNum = getRandomInt(0, 2);
+  const computerMove = getComputerMove(randomNum);
   const playerMove = getInput();
 
   const result = compareMoves(playerMove, computerMove);
   if(result !== DRAW) {
-    incrementScore(result);
+    incrementScore(result, playerScore, cpuScore);
   }
 
   logResult(result, playerMove, computerMove);
@@ -41,10 +37,10 @@ function playGame() {
  * @param {string} player
  *   specify whether the 'player' or 'computer' will gain an extra point
  */
-function incrementScore(player) {
-  if (player === PLAYER) {
+function incrementScore(playerChoice) {
+  if (playerChoice === PLAYER) {
     playerScore++;
-  } else if (player === CPU) {
+  } else if (playerChoice === CPU) {
     cpuScore++;
   } else {
     return false;
@@ -142,12 +138,19 @@ function logResult(result, playerMove, computerMove) {
  *   the move that the computer will play
  */
 function getComputerMove(random) {
-  if (random === RANDOM_MIN) {
+  if (random === 0) {
     return ROCK;
-  } else if (random === RANDOM_MID) {
+  } else if (random === 1) {
     return SCISSORS;
-  } else if (random === RANDOM_MAX) {
+  } else if (random === 2) {
     return PAPER;
   }
   return false;
+}
+
+module.exports = {
+  getRandomInt,
+  compareMoves,
+  getComputerMove,
+  incrementScore
 }
