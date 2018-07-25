@@ -7,10 +7,6 @@ const ROCK = 'rock';
 const SCISSORS = 'scissors';
 const PAPER = 'paper';
 
-const RANDOM_MIN = 0;
-const RANDOM_MAX = RANDOM_MIN + 2;
-const RANDOM_MID = RANDOM_MAX - 1;
-
 /*
  * play the game for as long as the user desires
  */
@@ -18,7 +14,8 @@ const RANDOM_MID = RANDOM_MAX - 1;
   let continueGame = true;
   while (continueGame) {
     const playerMove = getInput();
-    const computerMove = getRandomInt(RANDOM_MIN, RANDOM_MAX);
+    const randomNum = getRandomInt(0, 2);
+    const computerMove = getComputerMove(randomNum);
     const result = compareMoves(playerMove, computerMove);
     logResult(result, playerMove, computerMove);
     if (!confirm('Do you want to continue playing?')) {
@@ -112,7 +109,7 @@ function getRandomInt(min, max) {
  * @return
  *   the move that the computer will play
  */
-function initialiseComputerMove(random) {
+function getComputerMove(random) {
   if (random === 0) {
     return ROCK;
   } else if (random === 1) {
@@ -126,5 +123,5 @@ function initialiseComputerMove(random) {
 module.exports = {
   getRandomInt,
   compareMoves,
-  initialiseComputerMove
+  getComputerMove
 }
