@@ -1,6 +1,7 @@
 # Assignment 1 - Rock Scissors Paper
 ## Assignment 1.2 - Get input
 In this exercise we'll modify the game you programmed in *Assignment 1.1*
+
 |Goals|Examples
 |----------------|-------------------------------|
 |Implementing more HTML elements|`<span> <p> <h1> <ul> <ol>`|
@@ -23,4 +24,4 @@ Have a look below to see what you ~~can~~ will accomplish
 ![Get text from input field](https://i.gyazo.com/ba1399e08ad597479245ffe37df45640.gif)
 
 <span>&#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06; &#x2B06;</span>
-# END	
+# END
