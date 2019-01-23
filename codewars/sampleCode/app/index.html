@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Codewar Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../../sharedResources/css/fonts.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  </head>
+  <body id="mainContainer">
+    <h1>Codewars Leaderboard</h1>
+    <div>
+      <button class="button" onclick="showData()">Show Data</button>
+      <button class="button" onclick="hideData()">Hide Data</button>
+    </div>
+    <div id="tableContainer">
+      <table id="leaderboard">
+        <thead>
+          <th>Position</th>
+          <th>Username</th>
+          <th>Badge</th>
+          <th>Rank</th>
+          <th>Honor</th>
+        </thead>
+        <tbody id="data"></tbody>
+      </div>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>
