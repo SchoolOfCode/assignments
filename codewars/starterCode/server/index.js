@@ -27,6 +27,32 @@ app.get("/health", function(_req, res) {
   res.json({ message: "You hit the health route" });
 });
 
+let users = [
+  "aidanw549",
+  "AlexNicolau",
+  "brendanrichards73",
+  "Codeama",
+  "Aardeedev",
+  "jaskaran_",
+  "j0nnylester",
+  "karenchahal",
+  "lock7",
+  "KMcG24",
+  "Kira-Green",
+  "liamjejohnson",
+  "manumagalhaes",
+  "mareena88",
+  "mattwendzina",
+  "OliviaWinteringham",
+  "bromar2292",
+  "Dot-Rhs",
+  "robyn-SoC",
+  "SahelaR",
+  "Ropenfold",
+  "mrbenbot",
+  "WasimHamid"
+];
+
 // create a get route to '/users'
 // in the callback have a list of codewars users
 // fetch all userInfo

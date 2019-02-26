@@ -1,0 +1,8 @@
+#container {
+  background-color: #ececec;
+  color: #8d8d8d;
+  height: 30vh;
+  width: 300px;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}

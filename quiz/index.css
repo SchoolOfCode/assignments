@@ -1,0 +1,40 @@
+.button {
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  width: 21%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#scoreContainer {
+  height: 10vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+#questionContainer {
+  position: absolute;
+  background: white;
+  top: 0;
+  margin: 10% 5%;
+  padding: 2rem 4rem;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: none;
+}

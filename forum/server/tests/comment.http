@@ -1,0 +1,22 @@
+http://localhost/comments/5c643dcd2ad24220b22e1e66
+
+###
+POST http://localhost/comments HTTP/1.1
+content-type: application/json
+
+{
+    "text":"Now let's start on the database :D !!!",
+    "author":"maddocash",
+    "postId":"5c643dcd2ad24220b22e1e66"
+}
+
+###
+PATCH http://localhost/comments/5c5c25df32af337db8340f10 HTTP/1.1
+content-type: application/json
+
+{
+    "text": "comments comments comments"
+}
+
+###
+DELETE http://localhost/comments/5c5c25df32af337db8340f10 HTTP/1.1

@@ -1,0 +1,23 @@
+http://localhost/posts/5c643d192ad24220b22e1e62
+
+###
+POST http://localhost/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title":"FAQ",
+    "description":"you got a question?",
+    "author":"maddocash",
+    "topicId": "5c643d192ad24220b22e1e62"
+}
+
+###
+PATCH http://localhost/posts/5c595ff20fa0480f3307ffa9 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "this is my third post"
+}
+
+###
+DELETE http://localhost/posts/5c595e98b2700d034d5e2133 HTTP/1.1

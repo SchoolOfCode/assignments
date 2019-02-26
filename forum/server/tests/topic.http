@@ -1,0 +1,23 @@
+http://localhost
+###
+http://localhost/5c4b1388d4935fb8152be06e
+
+###
+POST http://localhost HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Food",
+    "author":"maddocash"
+}
+
+###
+PATCH http://localhost/5c4b1388d4935fb8152be06e HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Overall Stuff"
+}
+
+###
+DELETE http://localhost/5c595fb03fcbac0d7d40f73c HTTP/1.1
